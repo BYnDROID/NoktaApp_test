@@ -1,0 +1,33 @@
+<h2>Post Oluşturma Component test</h2>
+
+<mat-card>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        name="title"
+        ngModel
+        required
+        minlength="4"
+        #title="ngModel">
+      <mat-error *ngIf="title.invalid">Lütfen Bir Post Başlığı girin</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="4"
+        name="content"
+        ngModel
+        required
+        minlength="10"
+        #content="ngModel"></textarea>
+      <mat-error *ngIf="content.invalid">Lütfen Post içeriği girin</mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit">Post kaydet</button>
+  </form>
+</mat-card>
+
