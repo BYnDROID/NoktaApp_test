@@ -1,0 +1,15 @@
+<h2>Post Oluşturma Component test</h2>
+
+<mat-card>
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="enteretTitle">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput rows="6" [(ngModel)]="enteretContent"></textarea>
+  </mat-form-field>
+  <button
+  mat-raised-button
+  color="accent"
+  (click)="onAddPost()">Post kaydet</button>
+</mat-card>
+
