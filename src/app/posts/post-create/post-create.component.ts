@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Post } from '../post.model';
 
 @Component({
   selector: 'app-post-create',
@@ -7,13 +8,16 @@ import { Component } from '@angular/core';
 })
 
 export class PostCreateCompononet {
-  enteretValue='';
-  newPost = 'Henüz Post YOK.';
+  enteretTitle='';
+  enteretContent='';
+
+  @Output() postCreatet = new EventEmitter<Post>();
 
   onAddPost(){
-    // consolda gelen Objenin tüm detaylarını verecek
-   // console.dir(postInput);
-    this.newPost = this.enteretValue;
-    this.enteretValue = '';
+    const Post: Post = {
+          title: this.enteretTitle,
+          content:this.enteretContent
+    };
+    this.postCreatet.emit(Post);
   }
 }

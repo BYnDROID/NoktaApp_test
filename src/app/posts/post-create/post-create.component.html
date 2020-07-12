@@ -1,5 +1,15 @@
 <h2>Post Oluşturma Component test</h2>
-<textarea rows="6" [(ngModel)]="enteretValue"></textarea>
-<hr>
-<button (click)="onAddPost()">Post kaydet</button>
-<p>{{ newPost }}</p>
+
+<mat-card>
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="enteretTitle">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput rows="6" [(ngModel)]="enteretContent"></textarea>
+  </mat-form-field>
+  <button
+  mat-raised-button
+  color="accent"
+  (click)="onAddPost()">Post kaydet</button>
+</mat-card>
+
